@@ -13,6 +13,13 @@
 		6983D4A82519CECE009EFB96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6983D4A72519CECE009EFB96 /* Preview Assets.xcassets */; };
 		6983D4B32519CECF009EFB96 /* BookLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4B22519CECF009EFB96 /* BookLogTests.swift */; };
 		6983D4BE2519CECF009EFB96 /* BookLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4BD2519CECF009EFB96 /* BookLogUITests.swift */; };
+		6983D4D72519CF6A009EFB96 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4D62519CF6A009EFB96 /* BookList.swift */; };
+		6983D4DC2519D1F8009EFB96 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4DB2519D1F8009EFB96 /* Book.swift */; };
+		698590032519D2FB0040D80A /* BookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698590022519D2FB0040D80A /* BookItem.swift */; };
+		698590102519DA400040D80A /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985900F2519DA400040D80A /* BookData.swift */; };
+		698590182519F0620040D80A /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698590172519F0620040D80A /* BookDetail.swift */; };
+		698590202519F0F00040D80A /* DateFormatter+default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985901F2519F0F00040D80A /* DateFormatter+default.swift */; };
+		69DBED91251AE71000052F6F /* BookDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DBED90251AE71000052F6F /* BookDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		6983D4B92519CECF009EFB96 /* BookLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6983D4BD2519CECF009EFB96 /* BookLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLogUITests.swift; sourceTree = "<group>"; };
 		6983D4BF2519CECF009EFB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6983D4D62519CF6A009EFB96 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		6983D4DB2519D1F8009EFB96 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		698590022519D2FB0040D80A /* BookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItem.swift; sourceTree = "<group>"; };
+		6985900F2519DA400040D80A /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		698590172519F0620040D80A /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		6985901F2519F0F00040D80A /* DateFormatter+default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+default.swift"; sourceTree = "<group>"; };
+		69DBED90251AE71000052F6F /* BookDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +111,13 @@
 			children = (
 				6983D4A02519CECE009EFB96 /* BookLogApp.swift */,
 				6983D4A22519CECE009EFB96 /* ContentView.swift */,
+				6983D4D62519CF6A009EFB96 /* BookList.swift */,
+				698590022519D2FB0040D80A /* BookItem.swift */,
+				698590172519F0620040D80A /* BookDetail.swift */,
+				6983D4DB2519D1F8009EFB96 /* Book.swift */,
+				6985900F2519DA400040D80A /* BookData.swift */,
+				69DBED90251AE71000052F6F /* BookDataManager.swift */,
+				6985901F2519F0F00040D80A /* DateFormatter+default.swift */,
 				6983D4A42519CECE009EFB96 /* Assets.xcassets */,
 				6983D4A92519CECE009EFB96 /* Info.plist */,
 				6983D4A62519CECE009EFB96 /* Preview Content */,
@@ -259,8 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6983D4DC2519D1F8009EFB96 /* Book.swift in Sources */,
+				698590202519F0F00040D80A /* DateFormatter+default.swift in Sources */,
+				6983D4D72519CF6A009EFB96 /* BookList.swift in Sources */,
+				698590102519DA400040D80A /* BookData.swift in Sources */,
+				698590032519D2FB0040D80A /* BookItem.swift in Sources */,
 				6983D4A32519CECE009EFB96 /* ContentView.swift in Sources */,
+				698590182519F0620040D80A /* BookDetail.swift in Sources */,
 				6983D4A12519CECE009EFB96 /* BookLogApp.swift in Sources */,
+				69DBED91251AE71000052F6F /* BookDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
