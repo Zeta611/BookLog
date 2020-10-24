@@ -9,27 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var bookData: BookData
-    @State private var detailBookShown = false
-    @State private var currentBookUUID: UUID?
+
+    @SceneStorage("currentBookUUID") private var currentBookUUID: UUID? = nil
+    private var detailBookShown: Binding<Bool> {
+        Binding<Bool>(
+            get: { currentBookUUID != nil },
+            set: { shown in
+                if !shown {
+                    currentBookUUID = nil
+                }
+            }
+        )
+    }
 
     var body: some View {
         NavigationView {
             BookList()
                 .navigationTitle("Book Log")
-                .navigationBarItems(trailing: Button(action: {
-                    detailBookShown = true
+                .navigationBarItems(trailing: Button() {
                     let newBook = Book()
                     bookData.books.append(newBook)
                     currentBookUUID = newBook.id
-                }, label: {
+                } label: {
                     Image(systemName: "plus.circle")
-                }))
+                })
         }
-        .sheet(isPresented: $detailBookShown, content: {
-            NavigationView {
-                BookDetail(book: bookData.books.first { $0.id == currentBookUUID! }!)
+        .sheet(isPresented: detailBookShown) {
+            if let uuid = currentBookUUID,
+               let book = bookData.books.first { $0.id == uuid } {
+                NavigationView {
+                    BookDetail(book: book)
+                }
             }
-        })
+        }
     }
 }
 

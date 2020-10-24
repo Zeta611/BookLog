@@ -9,11 +9,16 @@ import SwiftUI
 
 struct BookList: View {
     @EnvironmentObject private var bookData: BookData
+    @SceneStorage("selectedBookUUID") private var selectedBookUUID: UUID? = nil
 
     var body: some View {
         List {
             ForEach(bookData.books) { book in
-                NavigationLink(destination: BookDetail(book: book)) {
+                NavigationLink(
+                    destination: BookDetail(book: book),
+                    tag: book.id,
+                    selection: $selectedBookUUID
+                ) {
                     BookItem(book: book)
                 }
             }

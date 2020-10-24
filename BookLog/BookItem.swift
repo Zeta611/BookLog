@@ -10,9 +10,6 @@ import SwiftUI
 struct BookItem: View {
     @EnvironmentObject private var bookData: BookData
     let book: Book
-    private var bookIndex: Int? {
-        bookData.books.firstIndex { $0.id == book.id }
-    }
 
     @State private var date: Date = Date()
 
