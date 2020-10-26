@@ -69,10 +69,7 @@ struct BookList: View {
                     }
                 }
             )
-            .environment(
-                \.editMode,
-                Binding(get: { editMode }, set: { editMode = $0 })
-            )
+            .environment(\.editMode, $editMode)
             .animation(.spring(response: 0))
         }
         .sheet(isPresented: detailBookShown) {
