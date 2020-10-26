@@ -55,19 +55,7 @@ struct BookList: View {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
                 },
-                trailing: Button {
-                    switch editMode {
-                    case .active: editMode = .inactive
-                    case .inactive: editMode = .active
-                    default: break
-                    }
-                } label: {
-                    if let isEditing = editMode.isEditing, isEditing {
-                        Text("Done")
-                    } else {
-                        Text("Edit")
-                    }
-                }
+                trailing: EditButton(editMode: $editMode)
             )
             .environment(\.editMode, $editMode)
             .animation(.spring(response: 0))
