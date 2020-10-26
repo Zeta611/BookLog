@@ -9,9 +9,12 @@ import SwiftUI
 
 struct BookList: View {
     @EnvironmentObject private var bookData: BookData
+
     @SceneStorage("selectedBookUUID") private var selectedBookUUID: UUID? = nil
     @SceneStorage("currentBookUUID") private var currentBookUUID: UUID? = nil
-    
+
+    @State private var editMode = EditMode.inactive
+
     private var detailBookShown: Binding<Bool> {
         Binding<Bool>(
             get: { currentBookUUID != nil },
@@ -52,8 +55,25 @@ struct BookList: View {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
                 },
-                trailing: EditButton()
+                trailing: Button {
+                    switch editMode {
+                    case .active: editMode = .inactive
+                    case .inactive: editMode = .active
+                    default: break
+                    }
+                } label: {
+                    if let isEditing = editMode.isEditing, isEditing {
+                        Text("Done")
+                    } else {
+                        Text("Edit")
+                    }
+                }
             )
+            .environment(
+                \.editMode,
+                Binding(get: { editMode }, set: { editMode = $0 })
+            )
+            .animation(.spring(response: 0))
         }
         .sheet(isPresented: detailBookShown) {
             if let uuid = currentBookUUID,
