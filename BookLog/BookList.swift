@@ -10,25 +10,59 @@ import SwiftUI
 struct BookList: View {
     @EnvironmentObject private var bookData: BookData
     @SceneStorage("selectedBookUUID") private var selectedBookUUID: UUID? = nil
-
-    var body: some View {
-        List {
-            ForEach(bookData.books) { book in
-                NavigationLink(
-                    destination: BookDetail(book: book),
-                    tag: book.id,
-                    selection: $selectedBookUUID
-                ) {
-                    BookItem(book: book)
+    @SceneStorage("currentBookUUID") private var currentBookUUID: UUID? = nil
+    
+    private var detailBookShown: Binding<Bool> {
+        Binding<Bool>(
+            get: { currentBookUUID != nil },
+            set: { shown in
+                if !shown {
+                    currentBookUUID = nil
                 }
             }
-            .onDelete { indexSet in
-                indexSet.forEach {
-                    bookData.books.remove(at: $0)
+        )
+    }
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(bookData.books) { book in
+                    NavigationLink(
+                        destination: BookDetail(book: book),
+                        tag: book.id,
+                        selection: $selectedBookUUID
+                    ) {
+                        BookItem(book: book)
+                    }
+                }
+                .onDelete { indexSet in
+                    indexSet.forEach {
+                        bookData.books.remove(at: $0)
+                    }
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+            .navigationTitle("Book Log")
+            .navigationBarItems(
+                leading: Button() {
+                    let newBook = Book()
+                    bookData.books.append(newBook)
+                    currentBookUUID = newBook.id
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .imageScale(.large)
+                },
+                trailing: EditButton()
+            )
+        }
+        .sheet(isPresented: detailBookShown) {
+            if let uuid = currentBookUUID,
+               let book = bookData.books.first { $0.id == uuid } {
+                NavigationView {
+                    BookDetail(book: book)
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
     }
 }
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		692DCBF425447E6600B340F1 /* UUID+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692DCBF325447E6600B340F1 /* UUID+RawRepresentable.swift */; };
 		6983D4A12519CECE009EFB96 /* BookLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4A02519CECE009EFB96 /* BookLogApp.swift */; };
-		6983D4A32519CECE009EFB96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4A22519CECE009EFB96 /* ContentView.swift */; };
 		6983D4A52519CECE009EFB96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6983D4A42519CECE009EFB96 /* Assets.xcassets */; };
 		6983D4A82519CECE009EFB96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6983D4A72519CECE009EFB96 /* Preview Assets.xcassets */; };
 		6983D4B32519CECF009EFB96 /* BookLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6983D4B22519CECF009EFB96 /* BookLogTests.swift */; };
@@ -44,7 +43,6 @@
 		692DCBF325447E6600B340F1 /* UUID+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+RawRepresentable.swift"; sourceTree = "<group>"; };
 		6983D49D2519CECE009EFB96 /* BookLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6983D4A02519CECE009EFB96 /* BookLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLogApp.swift; sourceTree = "<group>"; };
-		6983D4A22519CECE009EFB96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6983D4A42519CECE009EFB96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6983D4A72519CECE009EFB96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6983D4A92519CECE009EFB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				6983D4A02519CECE009EFB96 /* BookLogApp.swift */,
-				6983D4A22519CECE009EFB96 /* ContentView.swift */,
 				6983D4D62519CF6A009EFB96 /* BookList.swift */,
 				698590022519D2FB0040D80A /* BookItem.swift */,
 				698590172519F0620040D80A /* BookDetail.swift */,
@@ -289,7 +286,6 @@
 				6983D4D72519CF6A009EFB96 /* BookList.swift in Sources */,
 				698590102519DA400040D80A /* BookData.swift in Sources */,
 				698590032519D2FB0040D80A /* BookItem.swift in Sources */,
-				6983D4A32519CECE009EFB96 /* ContentView.swift in Sources */,
 				698590182519F0620040D80A /* BookDetail.swift in Sources */,
 				6983D4A12519CECE009EFB96 /* BookLogApp.swift in Sources */,
 				69DBED91251AE71000052F6F /* BookDataManager.swift in Sources */,
